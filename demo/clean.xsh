@@ -1,3 +1,5 @@
+#!/usr/bin/env xonsh
+
 rm -r an/
 rm -r raw/
 rm -r raw_data/
