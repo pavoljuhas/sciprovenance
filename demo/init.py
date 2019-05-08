@@ -11,6 +11,8 @@ from ophyd.sim import SynSignal, hw, SynSignalWithRegistry
 from xpdan.vend.callbacks.zmq import Publisher
 from xpdconf.conf import glbl_dict
 
+mydir = os.path.dirname(os.path.abspath(__file__))
+
 # create fake hardware (motors and detector)
 hw = hw()
 fname = os.path.expanduser("tooth.h5")
@@ -34,7 +36,7 @@ class FullField:
 
 f = FullField()
 det = SynSignalWithRegistry(f, name="img", labels={"detectors"},
-                            save_path='/home/christopher/dev/provenance-driven-ldrd/demo/raw_data')
+                            save_path=f'{mydir}/raw_data')
 det.kind = "hinted"
 
 # create run engine, link with ZMQ system

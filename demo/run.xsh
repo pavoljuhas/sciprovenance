@@ -11,8 +11,8 @@ terminator -p xonsh -e f"source activate {environment}; bluesky-0MQ-proxy 5567 5
 # start data processing servers
 for c in [
   'viz_server',
-  'portable_db_server /home/christopher/dev/provenance-driven-ldrd/demo',
+  f'portable_db_server {$PWD}',
   'tomo_server',
-  'python /home/christopher/dev/provenance-driven-ldrd/demo/elastic_server.py'
+  f'python {$PWD}/elastic_server.py'
 ]:
     terminator -p xonsh -e @(f"source activate {environment}; {c}") &
