@@ -14,7 +14,7 @@ terminator -p xonsh -e f"source {activate} {environment}; bluesky-0MQ-proxy 5567
 for c in [
   'viz_server --db=raw.yml',
   f'portable_db_server {$PWD}',
-  'tomo_server --db=raw.yml',
+  'tomo_server --db=raw.yml --algorithm="gridrec"',
   f'python {$PWD}/elastic_server.py'
 ]:
     terminator -T @(c) -e @(f"source {activate} {environment}; {c}") &
