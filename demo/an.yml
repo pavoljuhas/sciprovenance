@@ -1,0 +1,16 @@
+description: 'an database'
+metadatastore:
+    module: 'databroker.headersource.sqlite'
+    class: 'MDS'
+    config:
+        directory: 'an'
+        timezone: 'US/Eastern'
+assets:
+    module: 'databroker.assets.sqlite'
+    class: 'Registry'
+    config:
+        dbpath: 'an/assets.sqlite'
+handlers:
+    NPY_SEQ:
+        module: 'ophyd.sim'
+        class: 'NumpySeqHandler'
